@@ -13,12 +13,24 @@ function criarListaNumero(quantidade) {
 function contarNumerosPares(quantidade) {
     let listaNumerosPares = []
 
-    for (let cont = 0; cont <= quantidade; cont += 2){
+    for (let cont = 0; cont <= quantidade; cont += 2) {
         listaNumerosPares.push(cont)
     }
 
     return listaNumerosPares
 }
 
+function contarNumerosImpares(quantidade) {
+    let listaNumerosImpares = []
+
+    for (let cont = 0; cont <= quantidade; cont++) {
+        if (cont % 2 !== 0)
+            listaNumerosImpares.push(cont)
+    }
+
+    return listaNumerosImpares
+}
+
 console.log(criarListaNumero(2))
 console.log(contarNumerosPares(10))
+console.log(contarNumerosImpares(10))
