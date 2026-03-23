@@ -10,4 +10,15 @@ function criarListaNumero(quantidade) {
     return listaNumeros
 }
 
+function contarNumerosPares(quantidade) {
+    let listaNumerosPares = []
+
+    for (let cont = 0; cont <= quantidade; cont += 2){
+        listaNumerosPares.push(cont)
+    }
+
+    return listaNumerosPares
+}
+
 console.log(criarListaNumero(2))
+console.log(contarNumerosPares(10))
