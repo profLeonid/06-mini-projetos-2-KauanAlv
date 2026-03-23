@@ -31,6 +31,29 @@ function contarNumerosImpares(quantidade) {
     return listaNumerosImpares
 }
 
+function contarNumerosMultiplos(quantidade) {
+    let listaNumerosMultiplosDeCinco = []
+
+    for (let cont = 0; cont <= quantidade; cont += 5) {
+        if (cont % 5 === 0)
+            listaNumerosMultiplosDeCinco.push(cont)
+    }
+
+    return listaNumerosMultiplosDeCinco
+}
+
+function contarPotencia(quantidade) {
+    let listaMultiplosDeDois = []
+
+    for (let cont = 0; cont <= quantidade; cont++) {
+        listaMultiplosDeDois.push(2 ** cont)
+    }
+
+    return listaMultiplosDeDois
+}
+
 console.log(criarListaNumero(2))
 console.log(contarNumerosPares(10))
 console.log(contarNumerosImpares(10))
+console.log(contarNumerosMultiplos(10))
+console.table(contarPotencia(10))
