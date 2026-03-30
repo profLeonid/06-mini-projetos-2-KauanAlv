@@ -53,13 +53,41 @@ function contarQuadrado(quantidade) {
 }
 
 function criarLinha(numero, par, impar, multiploCinco, numeroPontecial) {
-    //Aqui ela vai receber 5 números e deve criar na tela a tabela com os 5 números
-    //Aqui sim começa o front
+    const tbody = document.getElementById('tbody')
+    const tr = document.createElement('tr')
 
+    const tdNum = document.createElement('td')
+    const tdPar = document.createElement('td')
+    const tdImpar = document.createElement('td')
+    const tdMultCinco = document.createElement('td')
+    const tdQuadrado = document.createElement('td')
+
+    tdNum.textContent = numero
+    tdPar.textContent = par
+    tdImpar.textContent = impar
+    tdMultCinco.textContent = multiploCinco
+    tdQuadrado.textContent = numeroPontecial
+
+    tr.appendChild(tdNum)
+    tr.appendChild(tdPar)
+    tr.appendChild(tdImpar)
+    tr.appendChild(tdMultCinco)
+    tr.appendChild(tdQuadrado)
+    tbody.appendChild(tr)
 }
 
-console.log(criarListaNumero(2))
-console.log(contarNumerosPares(10))
-console.log(contarNumerosImpares(10))
-console.log(contarNumerosMultiplos(10))
-console.table(contarQuadrado(10))
+function gerarLista() {
+    const quantidade = Number(document.getElementById('quantidade').value)
+
+    const listaNumeros = criarListaNumero(quantidade)
+    const listaPar = contarNumerosPares(quantidade)
+    const listaImpar = contarNumerosImpares(quantidade)
+    const listaMultCinco = contarNumerosMultiplos(quantidade)
+    const listaQuadrado = contarQuadrado(quantidade)
+
+    document.getElementById('tbody').replaceChildren()
+
+    for (let numEscolhido = 0; numEscolhido < quantidade; numEscolhido++) {
+        criarLinha(listaNumeros[numEscolhido], listaPar[numEscolhido], listaImpar[numEscolhido], listaMultCinco[numEscolhido], listaQuadrado[numEscolhido])
+    }
+}
