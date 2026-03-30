@@ -20,5 +20,16 @@ function calcularSubtracao (numero) {
     return listaSub
 }
 
+function calcularMultiplicacao (numero) {
+    let listaMult = []
+
+    for (let cont = 1; cont <= 10; cont++){
+        listaMult.push(numero * cont)
+    }
+
+    return listaMult
+}
+
 console.log(calcularSoma(5))
 console.log(calcularSubtracao(5))
+console.log(calcularMultiplicacao(5))
