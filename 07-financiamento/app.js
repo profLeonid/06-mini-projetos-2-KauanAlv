@@ -48,10 +48,13 @@ function criarLinha(mes, parcela, jurosMensal, totalMensal, saldoDevedor) {
     const tdSaldoDev = document.createElement('td')
 
     tdMes.textContent = mes
-    tdParc.textContent = parcela
+    tdParc.textContent = `R$ ${parcela.toFixed(2)}`
     tdjurosMensal.textContent = `R$ ${jurosMensal.toFixed(2)}`
     tdTotalmensal.textContent = `R$ ${totalMensal.toFixed(2)}`
     tdSaldoDev.textContent = `R$ ${saldoDevedor.toFixed(2)}`
+
+    tdjurosMensal.style.color = '#f87171'
+    tdTotalmensal.style.color = '#facc15'
 
     tr.appendChild(tdMes)
     tr.appendChild(tdParc)
